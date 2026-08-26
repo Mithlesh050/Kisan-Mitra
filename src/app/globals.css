@@ -1,0 +1,207 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 56% 94%; /* Light beige */
+    --foreground: 17 21% 38%; /* Muted brown */
+
+    --card: 60 56% 91%; /* Slightly darker beige */
+    --card-foreground: 17 21% 38%; /* Muted brown */
+
+    --popover: 60 56% 91%; /* Slightly darker beige */
+    --popover-foreground: 17 21% 38%; /* Muted brown */
+
+    --primary: 123 45% 38%; /* Earthy green */
+    --primary-foreground: 60 56% 97%; /* Lighter beige for text on primary */
+
+    --secondary: 30 20% 85%; /* Soft earthy tone */
+    --secondary-foreground: 17 21% 38%; /* Muted brown */
+
+    --muted: 30 20% 90%; /* Lighter version of secondary */
+    --muted-foreground: 17 21% 45%; /* Slightly lighter brown for muted text */
+
+    --accent: 45 100% 51%; /* Golden yellow */
+    --accent-foreground: 0 0% 10%; /* Dark text for accent */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 17 15% 75%; /* Light brown border */
+    --input: 17 15% 88%; /* Slightly lighter brown for input background */
+    --ring: 123 45% 38%; /* Earthy green for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Chart colors */
+    --chart-1: 123 45% 38%; /* Earthy Green */
+    --chart-2: 45 100% 51%; /* Golden Yellow */
+    --chart-3: 25 60% 55%;  /* Terracotta Brown */
+    --chart-4: 190 40% 50%; /* Muted Teal */
+    --chart-5: 0 40% 60%;   /* Soft Red */
+
+    /* Sidebar specific theme variables */
+    --sidebar-background: 123 45% 30%; /* Darker Earthy green */
+    --sidebar-foreground: 60 56% 94%; /* Light beige text */
+    --sidebar-primary: 45 100% 51%; /* Golden yellow for active/hover highlights in sidebar */
+    --sidebar-primary-foreground: 17 21% 25%; /* Darker Muted brown text on golden yellow */
+    --sidebar-accent: 123 45% 38%; /* Earthy green for hover states in sidebar */
+    --sidebar-accent-foreground: 60 56% 94%; /* Light beige text on accent */
+    --sidebar-border: 123 45% 25%; /* Even darker green for borders in sidebar */
+    --sidebar-ring: 45 100% 51%; /* Golden yellow for focus rings in sidebar */
+  }
+
+  [data-theme="dark"] {
+    --background: 17 21% 15%; /* Dark Muted brown */
+    --foreground: 60 56% 94%; /* Light beige */
+
+    --card: 17 21% 20%; /* Slightly lighter dark brown */
+    --card-foreground: 60 56% 94%; /* Light beige */
+
+    --popover: 17 21% 20%;
+    --popover-foreground: 60 56% 94%;
+
+    --primary: 123 45% 45%; /* Brighter Earthy green for dark mode */
+    --primary-foreground: 0 0% 98%; /* White text */
+
+    --secondary: 30 15% 30%; /* Darker earthy tone */
+    --secondary-foreground: 60 56% 94%;
+
+    --muted: 30 15% 25%;
+    --muted-foreground: 60 56% 80%; 
+
+    --accent: 45 100% 55%; /* Brighter Golden yellow */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 17 15% 35%;
+    --input: 17 15% 28%;
+    --ring: 123 45% 45%;
+
+    /* Chart colors */
+    --chart-1: 123 45% 45%;
+    --chart-2: 45 100% 55%;
+    --chart-3: 25 50% 65%;
+    --chart-4: 190 35% 60%;
+    --chart-5: 0 35% 70%;
+
+    /* Sidebar specific theme variables */
+    --sidebar-background: 123 45% 20%; /* Very Dark Earthy green */
+    --sidebar-foreground: 60 56% 94%;
+    --sidebar-primary: 45 100% 55%; 
+    --sidebar-primary-foreground: 17 21% 15%; 
+    --sidebar-accent: 123 45% 30%; 
+    --sidebar-accent-foreground: 60 56% 94%;
+    --sidebar-border: 123 45% 15%;
+    --sidebar-ring: 45 100% 55%;
+  }
+
+  [data-theme="oceanic"] {
+    --background: 210 40% 96%; /* Light Blue-Gray */
+    --foreground: 215 25% 27%; /* Dark Slate Blue */
+
+    --card: 210 40% 92%; 
+    --card-foreground: 215 25% 27%;
+
+    --popover: 210 40% 92%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 205 70% 45%; /* Ocean Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 190 50% 80%; /* Soft Teal */
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 190 50% 90%; 
+    --muted-foreground: 215 25% 45%;
+
+    --accent: 240 60% 65%; /* Lavender Blue */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 70% 50%; /* Coral Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 70%; 
+    --input: 210 30% 85%; 
+    --ring: 205 70% 45%;
+
+    /* Chart colors */
+    --chart-1: 205 70% 45%; /* Ocean Blue */
+    --chart-2: 240 60% 65%; /* Lavender Blue */
+    --chart-3: 180 65% 40%; /* Sea Green */
+    --chart-4: 30 80% 60%;  /* Sandy Orange */
+    --chart-5: 0 0% 60%;   /* Medium Gray */
+
+    /* Sidebar specific theme variables */
+    --sidebar-background: 215 35% 25%; /* Darker Slate Blue for Sidebar */
+    --sidebar-foreground: 210 40% 96%; /* Light Blue-Gray text */
+    --sidebar-primary: 240 60% 65%; /* Lavender Blue for active/hover */
+    --sidebar-primary-foreground: 215 35% 15%; /* Very Dark Slate for text on primary */
+    --sidebar-accent: 205 70% 45%; /* Ocean Blue for hover states */
+    --sidebar-accent-foreground: 210 40% 96%; /* Light Blue-Gray text on accent */
+    --sidebar-border: 215 35% 20%; /* Even darker Slate for borders */
+    --sidebar-ring: 240 60% 65%; /* Lavender Blue for focus rings */
+  }
+
+  [data-theme="desert"] {
+    --background: 35 50% 95%; /* Pale Sand */
+    --foreground: 30 30% 30%; /* Dark Brown-Gray */
+
+    --card: 35 50% 92%; /* Slightly Darker Sand */
+    --card-foreground: 30 30% 30%;
+
+    --popover: 35 50% 92%;
+    --popover-foreground: 30 30% 30%;
+
+    --primary: 30 65% 50%; /* Terracotta */
+    --primary-foreground: 35 50% 98%; /* Very Pale Sand */
+
+    --secondary: 40 30% 80%; /* Light Khaki */
+    --secondary-foreground: 30 30% 30%;
+
+    --muted: 40 30% 88%; /* Lighter Khaki */
+    --muted-foreground: 30 30% 45%;
+
+    --accent: 20 80% 60%; /* Burnt Orange */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 70% 55%; /* Soft Red-Brown */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 20% 70%; /* Muted Brown Border */
+    --input: 30 20% 85%; /* Light Brown Input */
+    --ring: 30 65% 50%; /* Terracotta Ring */
+
+    /* Chart colors */
+    --chart-1: 30 65% 50%; /* Terracotta */
+    --chart-2: 20 80% 60%;  /* Burnt Orange */
+    --chart-3: 45 40% 40%;  /* Olive Drab */
+    --chart-4: 50 50% 70%;  /* Pale Yellow */
+    --chart-5: 15 30% 55%;  /* Muted Reddish Brown */
+
+    /* Sidebar specific theme variables */
+    --sidebar-background: 30 40% 35%; /* Darker Terracotta/Brown */
+    --sidebar-foreground: 35 50% 95%; /* Pale Sand Text */
+    --sidebar-primary: 20 80% 60%; /* Burnt Orange for active/hover */
+    --sidebar-primary-foreground: 35 50% 98%; /* Very Pale Sand text on primary */
+    --sidebar-accent: 30 65% 50%; /* Terracotta for hover states */
+    --sidebar-accent-foreground: 35 50% 95%; /* Pale Sand text on accent */
+    --sidebar-border: 30 40% 30%; /* Even darker brown for borders */
+    --sidebar-ring: 20 80% 60%; /* Burnt Orange for focus rings */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+    

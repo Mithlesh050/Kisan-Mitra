@@ -1,0 +1,168 @@
+
+// src/lib/schemeData.ts
+import type { GovernmentScheme, SocialCategory, GenderTarget } from '@/types';
+import { APP_IMAGES } from '@/lib/image-config';
+
+export const governmentSchemes: GovernmentScheme[] = [
+  {
+    id: 'pm-kisan',
+    titleKey: 'schemePMKisanTitleFull',
+    shortDescriptionKey: 'schemePMKisanShortDesc',
+    detailedDescriptionKey: 'schemePMKisanDetailedDesc',
+    eligibilityCriteriaKeys: [
+      'pmKisanEligibility1',
+      'pmKisanEligibility2',
+      'pmKisanEligibility3',
+    ],
+    benefitsKeys: ['pmKisanBenefit1', 'pmKisanBenefit2'],
+    howToApplyKey: 'pmKisanHowToApply',
+    linkUrl: 'https://pmkisan.gov.in/',
+    imageUrl: APP_IMAGES.SCHEME_PM_KISAN_CARD.src,
+    aiHint: APP_IMAGES.SCHEME_PM_KISAN_CARD.aiHint,
+    tags: ['income support', 'all states', 'small farmers', 'marginal farmers', 'direct benefit transfer', 'agriculture', 'financial aid', 'landholding'],
+    targetStates: ["All"],
+    relevantCrops: ["All"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+    minAge: 18,
+  },
+  {
+    id: 'e-nam',
+    titleKey: 'schemeENAMTitleFull',
+    shortDescriptionKey: 'schemeENAMShortDesc',
+    detailedDescriptionKey: 'schemeENAMDetailedDesc',
+    eligibilityCriteriaKeys: [
+      'eNAMEligibility1',
+      'eNAMEligibility2',
+    ],
+    benefitsKeys: ['eNAMBenefit1', 'eNAMBenefit2', 'eNAMBenefit3'],
+    howToApplyKey: 'eNAMHowToApply',
+    linkUrl: 'https://www.enam.gov.in/web/',
+    imageUrl: APP_IMAGES.SCHEME_E_NAM_CARD.src,
+    aiHint: APP_IMAGES.SCHEME_E_NAM_CARD.aiHint,
+    tags: ['market linkage', 'online trading', 'price discovery', 'all states', 'apmc', 'agriculture produce', 'digital market', 'fpo'],
+    targetStates: ["All"],
+    relevantCrops: ["All"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+  },
+  {
+    id: 'pmfby',
+    titleKey: 'schemePMFBYTitleFull',
+    shortDescriptionKey: 'schemePMFBYShortDesc',
+    detailedDescriptionKey: 'schemePMFBYDetailedDesc',
+    eligibilityCriteriaKeys: [
+      'pmfbyEligibility1',
+      'pmfbyEligibility2',
+      'pmfbyEligibility3',
+    ],
+    benefitsKeys: ['pmfbyBenefit1', 'pmfbyBenefit2'],
+    howToApplyKey: 'pmfbyHowToApply',
+    linkUrl: 'https://pmfby.gov.in/',
+    imageUrl: APP_IMAGES.SCHEME_CROP_INSURANCE_CARD.src,
+    aiHint: APP_IMAGES.SCHEME_CROP_INSURANCE_CARD.aiHint,
+    tags: ['crop insurance', 'risk management', 'natural calamities', 'pest attacks', 'yield loss', 'premium subsidy', 'farmer protection', 'loan'],
+    targetStates: ["All"],
+    relevantCrops: ["Wheat", "Rice", "Maize", "Cotton", "Sugarcane", "Soybean", "Pulses", "Mustard", "Groundnut", "Millets", "Oilseeds"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+  },
+  {
+    id: 'soil-health-card',
+    titleKey: 'schemeSoilHealthCardTitleFull',
+    shortDescriptionKey: 'schemeSoilHealthCardShortDesc',
+    detailedDescriptionKey: 'schemeSoilHealthCardDetailedDesc',
+    eligibilityCriteriaKeys: [
+      'soilHealthCardEligibility1',
+      'soilHealthCardEligibility2',
+    ],
+    benefitsKeys: ['soilHealthCardBenefit1', 'soilHealthCardBenefit2', 'soilHealthCardBenefit3'],
+    howToApplyKey: 'soilHealthCardHowToApply',
+    linkUrl: 'https://soilhealth.dac.gov.in/',
+    imageUrl: APP_IMAGES.SCHEME_SOIL_HEALTH_CARD.src,
+    aiHint: APP_IMAGES.SCHEME_SOIL_HEALTH_CARD.aiHint,
+    tags: ['soil testing', 'nutrient management', 'fertilizer recommendation', 'soil health', 'sustainable agriculture', 'productivity', 'testing'],
+    targetStates: ["All"],
+    relevantCrops: ["All"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+  },
+  // New Placeholder Schemes (add about 4-6 more)
+  {
+    id: 'kcc',
+    titleKey: 'schemeKCCTitle',
+    shortDescriptionKey: 'schemeKCCShortDesc',
+    detailedDescriptionKey: 'schemeComingSoonDesc', // Placeholder
+    eligibilityCriteriaKeys: ['schemeGenericEligibility'], // Placeholder
+    benefitsKeys: ['schemeGenericBenefit'], // Placeholder
+    howToApplyKey: 'schemeGenericHowToApply', // Placeholder
+    linkUrl: '#', // Placeholder
+    imageUrl: APP_IMAGES.SCHEME_GENERIC_1.src,
+    aiHint: APP_IMAGES.SCHEME_GENERIC_1.aiHint,
+    tags: ['credit', 'loan', 'short term', 'agriculture input', 'animal husbandry', 'fisheries'],
+    targetStates: ["All"],
+    relevantCrops: ["All"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+    minAge: 18,
+    maxAge: 75,
+  },
+  {
+    id: 'pmksy',
+    titleKey: 'schemePMKSYTitle',
+    shortDescriptionKey: 'schemePMKSYShortDesc',
+    detailedDescriptionKey: 'schemeComingSoonDesc',
+    eligibilityCriteriaKeys: ['schemeGenericEligibility'],
+    benefitsKeys: ['schemeGenericBenefit'],
+    howToApplyKey: 'schemeGenericHowToApply',
+    linkUrl: '#',
+    imageUrl: APP_IMAGES.SCHEME_GENERIC_2.src,
+    aiHint: APP_IMAGES.SCHEME_GENERIC_2.aiHint,
+    tags: ['irrigation', 'water conservation', 'micro irrigation', 'water use efficiency', 'per drop more crop'],
+    targetStates: ["All"],
+    relevantCrops: ["All"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+  },
+  {
+    id: 'mgnrega-agri',
+    titleKey: 'schemeMGNREGAAgriTitle',
+    shortDescriptionKey: 'schemeMGNREGAAgriShortDesc',
+    detailedDescriptionKey: 'schemeComingSoonDesc',
+    eligibilityCriteriaKeys: ['schemeGenericEligibility'],
+    benefitsKeys: ['schemeGenericBenefit'],
+    howToApplyKey: 'schemeGenericHowToApply',
+    linkUrl: '#',
+    imageUrl: APP_IMAGES.SCHEME_GENERIC_3.src,
+    aiHint: APP_IMAGES.SCHEME_GENERIC_3.aiHint,
+    tags: ['rural employment', 'wage employment', 'agriculture labor', 'asset creation', 'drought proofing'],
+    targetStates: ["All"],
+    socialCategories: ["Any"],
+    genderTargets: ["Any"],
+    applicableToMinority: true,
+    isForDisabled: true,
+  },
+   {
+    id: 'national-food-security-mission',
+    titleKey: 'schemeNFSMLTitle',
+    shortDescriptionKey: 'schemeNFSMLShortDesc',
+    detailedDescriptionKey: 'schemeComingSoonDesc',
+    eligibilityCriteriaKeys: ['schemeGenericEligibility'],
+    benefitsKeys: ['schemeGenericBenefit'],
+    howToApplyKey: 'schemeGenericHowToApply',
+    linkUrl: '#',
+    imageUrl: APP_IMAGES.SCHEME_GENERIC_4.src,
+    aiHint: APP_IMAGES.SCHEME_GENERIC_4.aiHint,
+    tags: ['food security', 'rice', 'wheat', 'pulses', 'coarse cereals', 'productivity enhancement', 'seed distribution'],
+    targetStates: ["Specific States"], // Example
+    relevantCrops: ["Rice", "Wheat", "Pulses"],
+    socialCategories: ["SC", "ST"],
+    genderTargets: ["Female"],
+  },
+];
+
+export const getGovernmentSchemes = async (): Promise<GovernmentScheme[]> => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 300));
+  return governmentSchemes;
+};
