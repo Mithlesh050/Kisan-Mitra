@@ -6,26 +6,41 @@ import { getCropImageDetails } from './image-config';
 const DATA_GOV_API_BASE_URL = "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070";
 const API_KEY = process.env.DATA_GOV_IN_API_KEY || "579b464db66ec23bdd0000010817fc9615cd4de94eeddad13faa4fa7"; // Fallback to public test key
 
-export const getRealTimePrices = async (selectedCrop?: string): Promise<CropPriceInfo[]> => {
-  const params = new URLSearchParams({
-    "api-key": API_KEY,
-    format: "json",
-    limit: "50", // Fetch a decent number of records
-  });
+// export const getRealTimePrices = async (selectedCrop?: string): Promise<CropPriceInfo[]> => {
+//   const params = new URLSearchParams({
+//     "api-key": API_KEY,
+//     format: "json",
+//     limit: "50", // Fetch a decent number of records
+//   });
 
-  if (selectedCrop) {
-    // The API uses 'commodity' for filtering
-    // We need to ensure selectedCrop matches a commodity name the API recognizes
-    // For now, we'll assume direct mapping.
-    params.append("filters[commodity]", selectedCrop);
-  }
+//   if (selectedCrop) {
+//     // The API uses 'commodity' for filtering
+//     // We need to ensure selectedCrop matches a commodity name the API recognizes
+//     // For now, we'll assume direct mapping.
+//     params.append("filters[commodity]", selectedCrop);
+//   }
 
+//   try {
+//     const response = await fetch(`${DATA_GOV_API_BASE_URL}?${params.toString()}`);
+//     if (!response.ok) {
+//       console.error("API Error Response:", response.status, await response.text());
+//       throw new Error(`Failed to fetch prices from data.gov.in: ${response.statusText}`);
+//     }
+//     const data: DataGovApiResponse = await response.json();
+
+//     if (!data.records || data.records.length === 0) {
+//       return [];
+//     }
+  export const getRealTimePrices = async (selectedCrop?: string): Promise<CropPriceInfo[]> => {
   try {
-    const response = await fetch(`${DATA_GOV_API_BASE_URL}?${params.toString()}`);
+    const queryParam = selectedCrop ? `?commodity=${encodeURIComponent(selectedCrop)}` : '';
+    const response = await fetch(`/api/prices${queryParam}`);
+
     if (!response.ok) {
       console.error("API Error Response:", response.status, await response.text());
-      throw new Error(`Failed to fetch prices from data.gov.in: ${response.statusText}`);
+      throw new Error(`Failed to fetch prices: ${response.statusText}`);
     }
+
     const data: DataGovApiResponse = await response.json();
 
     if (!data.records || data.records.length === 0) {
